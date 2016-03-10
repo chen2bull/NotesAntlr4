@@ -25,6 +25,6 @@ public class Calc {
         ParseTree tree = parser.prog(); // parse
 
         EvalVisitor eval = new EvalVisitor();
-        eval.visit(tree);
+        eval.visit(tree);   // 用这个方法来start walking整个语法树
     }
 }

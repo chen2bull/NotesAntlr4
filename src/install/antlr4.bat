@@ -6,4 +6,4 @@ REM courses, books, articles, and the like. Contact us if you are in doubt.
 REM We make no guarantees that this code is fit for any purpose. 
 REM Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 
-java -cp C:\libraries\antlr-4.0-complete.jar;%CLASSPATH% org.antlr.v4.Tool %*
+java -cp D:\Greens\antrl4\antlr-4.5.2-complete.jar;%CLASSPATH% org.antlr.v4.Tool %*

@@ -1,5 +1,6 @@
 grammar LabeledExpr; // rename to distinguish from Expr.g4
-
+//  要使用visitor的话(EvalVisitor)，编译g4文件的时候，要添加-visitor选项
+//  antlr4  -no-listener  -visitor  LabeledExpr.g4
 prog:   stat+ ;
 
 stat:   expr NEWLINE                # printExpr
@@ -14,6 +15,7 @@ expr:   expr op=('*'|'/') expr      # MulDiv
     |   '(' expr ')'                # parens
     ;
 
+//  为运算符号定义名字，以此，在java的visitor代码中可以使用这些名字
 MUL :   '*' ; // assigns token name to '*' used above in grammar
 DIV :   '/' ;
 ADD :   '+' ;

@@ -1,7 +1,7 @@
 grammar Expr;
 
 /** The start rule; begin parsing here. */
-prog:   stat+ ; 
+prog:   stat+ ;     // 只需要一个+号就可以表示一个或者多个，比bison简单多了
 
 stat:   expr NEWLINE                
     |   ID '=' expr NEWLINE        
