@@ -34,6 +34,8 @@ public class InsertSerialID {
         InsertSerialIDListener extractor = new InsertSerialIDListener(tokens);
         walker.walk(extractor, tree); // initiate walk of tree with listener
 
+        // 用带rewriter的Listener，walk完整棵树以后
+        // 再用rewriter可以获取到，插入信息以后的
         // print back ALTERED stream
         System.out.println(extractor.rewriter.getText());
     }

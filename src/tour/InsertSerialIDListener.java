@@ -18,6 +18,7 @@ public class InsertSerialIDListener extends JavaBaseListener {
     @Override
     public void enterClassBody(JavaParser.ClassBodyContext ctx) {
         String field = "\n\tpublic static final long serialVersionUID = 1L;";
+        // 在Rewrite中插入某个字符串，在外部获取到这个rewriter，再调用rewriter的getText
         rewriter.insertAfter(ctx.start, field);
     }
 }
