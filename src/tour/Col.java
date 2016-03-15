@@ -14,6 +14,22 @@ import org.antlr.v4.runtime.Token;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
+/* 使用方法
+$  antlr4  -no-listener  Rows.g4    #  don't  need  the  listener ➾
+$  javac  Rows*.java  Col.java ➾
+$  java  Col  1  <  t.rows  #  print  out  column  1,  reading  from  file  t.rows
+parrt
+tombu
+bke
+$  java  Col  2  <  t.rows
+Terence  Parr
+Tom  Burns
+Kevin  Edgar
+$  java  Col  3  <  t.rows
+101
+020
+008
+ */
 public class Col {
     public static void main(String[] args) throws Exception {
         ANTLRInputStream input = new ANTLRInputStream(System.in);

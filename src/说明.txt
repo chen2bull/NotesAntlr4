@@ -12,3 +12,11 @@
     tour/IDemo.java         // 输出的结果
     tour/ExtractInterfaceTool.java          // 运行程序，用ExtractInterfaceListener来walk语法树
     tour/ExtractInterfaceListener.java      // （关键程序）
+获取文件的某一列(语义断言、或者叫语义谓词)
+    tour/Col.java
+    tour/Rows.g4
+    tour/t.rows
+类似于解码erlang外部格式的程序（数据包解码，同样使用语义谓词）
+    Data.g4 (不需要额外的java代码)
+    tour/t.data
+
