@@ -7,5 +7,8 @@
  ! Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 -->
 <tools>
+    <!-- something -->
 	<tool name="ANTLR">A parser generator</tool>
+    <!-- something2 -->
+    <tool name="ANTLR2">A parser generator2</tool>
 </tools>
