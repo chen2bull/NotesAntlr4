@@ -37,4 +37,11 @@ public class ExtractInterfaceListener extends JavaBaseListener {
         String args = tokens.getText(ctx.formalParameters());
         System.out.println("\t"+type+" "+ctx.Identifier()+args+";");
     }
+
+    @Override
+    public void enterImportDeclaration(JavaParser.ImportDeclarationContext ctx) {
+        TokenStream tokenStream = parser.getTokenStream();
+        // 直接用ctx做参数， 获取这条规则匹配的完整字符串
+        System.out.println(tokenStream.getText(ctx));
+    }
 }

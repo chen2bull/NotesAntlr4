@@ -1,0 +1,14 @@
+匹配语言算数运算
+    tour/ExprJoyRide.java
+    tour/Expr.g4
+    tour/LibExpr.g4
+    tour/CommonLexerRules.g4
+计算器
+    tour/LabeledExpr.g4         // antlr4  -no-listener  -visitor  LabeledExpr.g4
+    tour/Calc.java
+    tour/EvalVisitor.java    // 实现计算器的逻辑
+接口生成器（根据java类文件，生成接口文件）
+    tour/Demo.java          // 用来作为输入
+    tour/IDemo.java         // 输出的结果
+    tour/ExtractInterfaceTool.java          // 运行程序，用ExtractInterfaceListener来walk语法树
+    tour/ExtractInterfaceListener.java      // （关键程序）
