@@ -39,6 +39,6 @@ NUMBER
     |   '-'? INT                 // -3, 45
     ;
 fragment INT :   '0' | [1-9] [0-9]* ; // no leading zeros
-fragment EXP :   [Ee] [+\-]? INT ; // \- since - means "range" inside [...]
+fragment EXP :   [Ee] [+\-]? INT ;
 
 WS  :   [ \t\n\r]+ -> skip ;
