@@ -43,10 +43,26 @@ Exploring Some Real Grammars
     example/CSV.g4
 JSON官网 http://json.org 提供的例子
     example/JSON.g4
+    example/t.json
 DOT语言(略)
     example/DOT.g4
 Cymbol语言(略)
     example/Cymbol.g4
 R语言(略)      这个例子有完整的十六进制和十进制转义字符的匹配规则
     example/R.g4
+    example/t.R
+    example/TestR.java
+
+====================================================================================================
+Implementing Applications with Visitors
+====================================================================================================
+属性阅读器(listener版本)
+    listeners/TestPropertyFile.java
+    listeners/PropertyFile.g4
+    listeners/t.properties
+属性阅读器(vistor版本)     // 用antlr4 -visitor
+    listeners/TestPropertyFileVisitor.java
+    listeners/PropertyFile.g4
+    listeners/t.properties
+
 
