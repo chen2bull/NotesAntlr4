@@ -16,7 +16,7 @@ public class TestR {
 		RParser parser = new RParser(tokens);
 		parser.setBuildParseTree(true);
 		RuleContext tree = parser.prog();
-		tree.inspect(parser); // show in gui
+		// tree.inspect(parser); // show in gui
 		//tree.save(parser, "/tmp/R.ps"); // Generate postscript
 		System.out.println(tree.toStringTree(parser));
 	}
