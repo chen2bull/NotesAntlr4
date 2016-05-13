@@ -64,5 +64,14 @@ Implementing Applications with Visitors
     listeners/TestPropertyFileVisitor.java
     listeners/PropertyFile.g4
     listeners/t.properties
+简单计算器(非Labeling版本)
+    listeners/Expr.g4
+    listeners/TestEvaluator.java
+简单计算器(Labeling版本)
+    listeners/LExpr.g4
+    listeners/TestLEvaluator.java(基于Stack的实现,有点恶心)
+    listeners/TestLEvalVisitor.java(Labeling,基于Visitor的返回值,直观且简单的实现)
+    listeners/TestLEvaluatorWithProps.java(Labeling,直观且简单的实现)
+
 
 
