@@ -16,6 +16,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 public class CheckSymbols {
+    // 根据token的类型,返回相应的符号类型
     public static Symbol.Type getType(int tokenType) {
         switch ( tokenType ) {
             case CymbolParser.K_VOID :  return Symbol.Type.tVOID;

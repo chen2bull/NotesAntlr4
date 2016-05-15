@@ -87,6 +87,25 @@ JSON to XML转换   // 每个退出事件的方法都定义了,转换器也就�
 产生一个调用图(十分简单,包含两个例子)
     listeners/Cymbol.g4
     listeners/CallGraph.java
+检查程序中符号使用的合法性(构建和使用符号表的基本方法)
+    // 作用域
+    listeners/BaseScope.java    // 看起来BaseScope已经实现了作用域的所有操作了
+                                // GlobalScope和LocalScope没有必要存在,可以删除
+                                // 然后再BaseScope中添加scopeName字段记录作用域的名字即可
+    listeners/GlobalScope.java
+    listeners/LocalScope.java
+    // 符号
+    listeners/Symbol.java
+    listeners/FunctionSymbol.java   // 将resolve和define操作放在这里貌似有一点不合理!
+                                    // 作者之所有这么做,应该是因为函数的参数也在作用域中
+    listeners/VariableSymbol.java
+    // 用同一个walker遍历两次语法分析树(用不不同的listener)
+    //第一次定义所有的符号,第二次resolve所有的符号
+    listeners/CheckSymbols.java
+    listeners/DefPhase.java
+    listeners/RefPhase.java     // enterFunctionDecl和exitFunctionDecl这么神来之笔般的简单
+                                // 在于函数声明的的作用域,在注释语法树中,作为函数声明节点被annotated了
+                                // 而两次遍历用同一个walker,保证节点被访问的顺序是相同的
 
 
 

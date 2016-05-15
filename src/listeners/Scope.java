@@ -9,7 +9,7 @@
 public interface Scope {
     public String getScopeName();
 
-    /** Where to look next for symbols */
+    /** Where to look next for symbols, 往往通过指向父节点的指针实现 */
     public Scope getEnclosingScope();
 
     /** Define a symbol in the current scope */

@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public abstract class BaseScope implements Scope {
-    Scope enclosingScope; // null if global (outermost) scope
+    Scope enclosingScope; // 如果是global作用域,值为null;否则为指向父节点(上层作用域)的引用
     Map<String, Symbol> symbols = new LinkedHashMap<String, Symbol>();
 
     public BaseScope(Scope enclosingScope) { this.enclosingScope = enclosingScope;  }
@@ -25,7 +25,7 @@ public abstract class BaseScope implements Scope {
 
     public void define(Symbol sym) {
         symbols.put(sym.name, sym);
-        sym.scope = this; // track the scope in each symbol
+        sym.scope = this; // track the scope in each symbol!!!!!
     }
 
     public Scope getEnclosingScope() { return enclosingScope; }
