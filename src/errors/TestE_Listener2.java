@@ -6,7 +6,6 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 ***/
-import com.sun.istack.internal.Nullable;
 import org.antlr.v4.runtime.*;
 
 import java.util.*;
@@ -32,10 +31,10 @@ public static class UnderlineListener extends BaseErrorListener {
         String input = tokens.getTokenSource().getInputStream().toString();
         String[] lines = input.split("\n");
         String errorLine = lines[line - 1];
-        System.err.println(errorLine);
+        System.err.println(errorLine);  // 打印错误的行
         for (int i=0; i<charPositionInLine; i++) System.err.print(" ");
-        int start = offendingToken.getStartIndex();
-        int stop = offendingToken.getStopIndex();
+        int start = offendingToken.getStartIndex();     // 错误token的开始index
+        int stop = offendingToken.getStopIndex();       // 错误token的结束index
         if ( start>=0 && stop>=0 ) {
             for (int i=start; i<=stop; i++) System.err.print("^");
         }

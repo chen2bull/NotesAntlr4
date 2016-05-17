@@ -7,7 +7,6 @@
  * Visit http://www.pragmaticprogrammer.com/titles/tpantlr2 for more book information.
 ***/
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.Nullable;
 
 import java.util.*;
 
