@@ -113,9 +113,13 @@ Ch09-Error Reporting and Recovery
 错误演示
     errors/Simple.g4
 更换错误处理listener
-    errors/TestE_Listener.java      //打印错误规则栈的信息
-    errors/TestE_Listener2.java     //命令行上更友好的报错信息
+    errors/TestE_Listener.java      // 打印错误规则栈的信息
+    errors/TestE_Listener2.java     // 命令行上更友好的报错信息
     errors/TestE_Dialog.java
+following集合演示,注意antlr4的following跟其他编译器的FOLLOW集合是不同的
+    errors/F.g4                     // 同步词法单元是 调用栈里面所有规则的following集合 的并集!!!!!!!!!!
+error alternatives的演示
+
 
 
 
