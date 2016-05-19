@@ -123,8 +123,10 @@ error alternatives的演示
 语义谓词的错误处理
     errors/Vec.g4                   // 语义谓词的默认错误信息
     errors/VecMsg.g4                // 自定义语义谓词的错误信息
-语义谓词的错误处理
+错误规则
     errors/Call.g4                  // 错误规则,匹配常见的错误,提供更友好的错误提示
-
-
+变更antlr的错误处理策略
+    errors/BailErrorStrategy.java   // 自定义的错误处理策略类
+    errors/Simple.g4
+    errors/TestBail.java            // 测试自定义策略类
 
