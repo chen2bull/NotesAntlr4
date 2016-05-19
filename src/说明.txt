@@ -119,7 +119,10 @@ Ch09-Error Reporting and Recovery
 following集合演示,注意antlr4的following跟其他编译器的FOLLOW集合是不同的
     errors/F.g4                     // 同步词法单元是 调用栈里面所有规则的following集合 的并集!!!!!!!!!!
 error alternatives的演示
-
+    errors/Simple.g4
+语义谓词的错误处理
+    errors/Vec.g4                   // 语义谓词的默认错误信息
+    errors/VecMsg.g4                // 自定义语义谓词的错误信息
 
 
 
