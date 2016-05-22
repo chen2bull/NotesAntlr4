@@ -7,18 +7,18 @@ import java.util.*;
 }
 
 @parser::members {
-    /** "memory" for our calculator; variable/value pairs go here */
-    Map<String, Integer> memory = new HashMap<String, Integer>();
+/** "memory" for our calculator; variable/value pairs go here */
+Map<String, Integer> memory = new HashMap<String, Integer>();
 
-    int eval(int left, int op, int right) {
-        switch ( op ) {
-            case MUL : return left * right;
-            case DIV : return left / right;
-            case ADD : return left + right;
-            case SUB : return left - right;
-        }
-        return 0;
+int eval(int left, int op, int right) {
+    switch ( op ) {
+        case MUL : return left * right;
+        case DIV : return left / right;
+        case ADD : return left + right;
+        case SUB : return left - right;
     }
+    return 0;
+}
 }
 
 stat:   e NEWLINE           {System.out.println($e.v);}
