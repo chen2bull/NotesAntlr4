@@ -130,3 +130,12 @@ error alternatives的演示
     errors/Simple.g4
     errors/TestBail.java            // 测试自定义策略类
 
+====================================================================================================
+Ch10-Attributes and Actions
+====================================================================================================
+用属性和语义动作实现的计算器
+    actions/tools/Calc.java
+    actions/tools/Expr.g4
+    // antlr4 -no-listener tools/Expr.g4
+    // javac -d . tools/*.java #以当前目录为根目录,在java文件声明的包中生成*.class
+    // java tools.Calc

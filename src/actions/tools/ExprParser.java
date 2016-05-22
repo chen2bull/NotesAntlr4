@@ -1,4 +1,4 @@
-// Generated from Expr.g4 by ANTLR 4.5.3
+// Generated from tools/Expr.g4 by ANTLR 4.5.3
 
 package tools;
 import java.util.*;
@@ -110,14 +110,6 @@ public class ExprParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stat; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExprListener ) ((ExprListener)listener).enterStat(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExprListener ) ((ExprListener)listener).exitStat(this);
-		}
 	}
 
 	public final StatContext stat() throws RecognitionException {
@@ -191,14 +183,6 @@ public class ExprParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_e; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExprListener ) ((ExprListener)listener).enterE(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExprListener ) ((ExprListener)listener).exitE(this);
-		}
 	}
 
 	public final EContext e() throws RecognitionException {
