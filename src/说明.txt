@@ -131,9 +131,9 @@ error alternatives的演示
     errors/TestBail.java            // 测试自定义策略类
 
 ====================================================================================================
-Ch10-Attributes and Actions
+Ch10-Attributes and Actions 属性和与语义动作
 ====================================================================================================
-可以先从第四章的Rows.g4和Data.g4看看Action和语义谓词的使用
+可以先从第四章的Rows.g4和Data.g4看看Attributes、Action和语义谓词的使用
 用属性和语义动作实现的计算器
     actions/tools/Calc.java
     actions/tools/Expr.g4
@@ -145,4 +145,6 @@ Ch10-Attributes and Actions
     $  antlr4  -no-listener  CSV.g4     #  again,  we  won't  use  a  listener
     $  javac  CSV*.java
     $  grun  CSV  file  users.csv       # 记住使用grun使用file选项指定输入文件
+识别关键字不是固定的语言(比如java5添加了enum的支持,编译器可以用-version来指定是否支持第五版的新特性)
+    actions/Keywords.g4
 
