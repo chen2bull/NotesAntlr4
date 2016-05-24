@@ -10,7 +10,7 @@ grammar Rows;
 
 file: (row NL)+ ;
 
-row
+row             // 解析到行的时候执行以下代码
 locals [int i=0]
     : (   STUFF
           {

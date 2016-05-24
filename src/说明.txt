@@ -15,7 +15,7 @@ Ch04-A Quick Tour
     tour/IDemo.java         // 输出的结果
     tour/ExtractInterfaceTool.java          // 运行程序，用ExtractInterfaceListener来walk语法树
     tour/ExtractInterfaceListener.java      // （关键程序）
-获取文件的某一列(语义断言、或者叫语义谓词)
+获取(打印)文件的某一列(语义断言、或者叫语义谓词)
     tour/Col.java
     tour/Rows.g4
     tour/t.rows
@@ -133,6 +133,7 @@ error alternatives的演示
 ====================================================================================================
 Ch10-Attributes and Actions
 ====================================================================================================
+可以先从第四章的Rows.g4和Data.g4看看Action和语义谓词的使用
 用属性和语义动作实现的计算器
     actions/tools/Calc.java
     actions/tools/Expr.g4
