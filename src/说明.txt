@@ -147,4 +147,15 @@ Ch10-Attributes and Actions 属性和与语义动作
     $  grun  CSV  file  users.csv       # 记住使用grun使用file选项指定输入文件
 识别关键字不是固定的语言(比如java5添加了enum的支持,编译器可以用-version来指定是否支持第五版的新特性)
     actions/Keywords.g4
+====================================================================================================
+Ch11-Altering the Parse with Semantic Predicates用语义谓词变更解析
+====================================================================================================
+识别不同的方言,例子1,在语法分析器中使用语义谓词
+    predicates/Enum.g4
+    predicates/TestEnum.java
+识别不同的方言,例子2,在词法分析器中使用语义谓词(解决和上面例子一样的问题)
+    predicates/Enum2.g4
+    // 这个例子更适合在词法分析器中使用语义谓词,因为这样的话就可以简化语法分析器,比如不用定义额外的规则id
+    predicates/TestEnum2.java
+
 
