@@ -140,3 +140,9 @@ Ch10-Attributes and Actions
     // antlr4 -no-listener tools/Expr.g4
     // javac -d . tools/*.java #以当前目录为根目录,在java文件声明的包中生成*.class
     // java tools.Calc
+用属性和语义动作实现CSVLoader
+    actions/CSV.g4
+    $  antlr4  -no-listener  CSV.g4     #  again,  we  won't  use  a  listener
+    $  javac  CSV*.java
+    $  grun  CSV  file  users.csv       # 记住使用grun使用file选项指定输入文件
+
