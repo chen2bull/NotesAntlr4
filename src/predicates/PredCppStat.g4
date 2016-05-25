@@ -4,6 +4,7 @@ grammar PredCppStat;
 import java.util.*;
 }
 
+// 这也不是一个可以运行的例子,只是说明了,可以使用符号表来支持语义谓词的使用
 @parser::members {
 Set<String> types = new HashSet<String>() {{add("T");}};
 boolean istype() { return types.contains(getCurrentToken().getText()); }
