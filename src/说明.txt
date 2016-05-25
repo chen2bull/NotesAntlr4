@@ -158,5 +158,15 @@ Ch11-Altering the Parse with Semantic Predicates用语义谓词变更解析
     predicates/Enum2.g4
     // 这个例子更适合在词法分析器中使用语义谓词,因为这样的话就可以简化语法分析器,比如不用定义额外的规则id
     predicates/TestEnum2.java
+解决二义性的两个例子(这两个例子并不是完整的,只是提供了思路,可以在git上看完整的Cpp.g4)
+    predicates/CppExpr.g4
+    predicates/CppStat.g4
+
+====================================================================================================
+Ch12-Wielding Lexical Black Magic运用词法分析的黑魔法(解决一些很有意义的难题)
+====================================================================================================
+使用不同的channel,用TokenStreamRewriter来重写token流
+    lexmagic/ShiftVarComments.java
+    lexmagic/Cymbol.g4
 
 

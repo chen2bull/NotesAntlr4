@@ -22,22 +22,23 @@ public class ShiftVarComments {
 		 */
         public CommentShifter(BufferedTokenStream tokens) {
             this.tokens = tokens;
+            // 用TokenStream(或者它的子类)初始化TokenStreamRewriter
             rewriter = new TokenStreamRewriter(tokens);
         }
 
         @Override
         public void exitVarDecl(CymbolParser.VarDeclContext ctx) {
-            Token semi = ctx.getStop(); 
-            int i = semi.getTokenIndex();
-            List<Token> cmtChannel =
-                tokens.getHiddenTokensToRight(i, CymbolLexer.COMMENTS); 
+            Token semi = ctx.getStop();     // 获取到变量定义末尾的分号
+            int i = semi.getTokenIndex();   // 分号的index
+            // 在COMMENTS channel中获取i右边的注释
+            List<Token> cmtChannel = tokens.getHiddenTokensToRight(i, CymbolLexer.COMMENTS);
             if ( cmtChannel!=null ) {
-                Token cmt = cmtChannel.get(0); 
+                Token cmt = cmtChannel.get(0);  // 为了简单化,这里假设只有一个注释
                 if ( cmt!=null ) {
                     String txt = cmt.getText().substring(2);
                     String newCmt = "/* " + txt.trim() + " */\n";
                     rewriter.insertBefore(ctx.start, newCmt); 
-                    rewriter.replace(cmt, "\n");			  
+                    rewriter.replace(cmt, "\n");
                 }
             }
         }
