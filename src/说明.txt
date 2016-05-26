@@ -168,5 +168,8 @@ Ch12-Wielding Lexical Black Magic运用词法分析的黑魔法(解决一些很�
 使用不同的channel,用TokenStreamRewriter来重写token流
     lexmagic/ShiftVarComments.java
     lexmagic/Cymbol.g4
+将关键字当做标识符来处理
+    lexmagic/IDKeyword.g4   // 相当巧妙的处理，只需要将特定的单词作为和词法规则ID组合成parser规则id即可
+
 
 
