@@ -174,5 +174,15 @@ Python中换行符的处理
     lexmagic/SimplePy.g4
 识别XML文件,使用非贪婪模式,但是能只能实现比较简单的文本,功能比较弱鸡
     lexmagic/Tags.g
+识别XML文件,使用词法模式,功能仍然比较弱鸡
+    lexmagic/ModTagsLexer.g4
+    lexmagic/ModTagsParser.g4
+有实用意义的XML解析器()
+    lexmagic/XMLLexer.g4
+    lexmagic/XMLParser.g4
+    #antlr4 XMLLexer.g4
+    #antlr4 XMLParser.g4
+    #javac XML*.g4
+    #grun XML document -tree XML-inputs/entity.xml
 
 
