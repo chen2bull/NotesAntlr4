@@ -39,11 +39,13 @@ LBRACK    : '[' {nesting++;} ;
 RBRACK    : ']' {nesting--;} ;
 
 /** Nested newline within a (..) or [..] are ignored. */
+/** 配合括号规则对nesting的++和--操作*/
 IGNORE_NEWLINE
     :   '\r'? '\n' {nesting>0}? -> skip
     ;
 
 /** A logical newline that ends a statement */
+/** 只有结束一条语句的换行符会被匹配到这条规则 */
 NEWLINE
     :   '\r'? '\n'
     ;
@@ -54,6 +56,8 @@ WS  :   [ \t]+ -> skip
 
 /** Ignore backslash newline sequences. This disallows comments
  *  after the backslash because newline must occur next.
+ *  python的反斜杠后面必须紧跟换行符(不能跟空格加注释),否则就不是
+ *
  */
 LINE_ESCAPE
     :   '\\' '\r'? '\n' -> skip
