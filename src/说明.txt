@@ -15,7 +15,7 @@ Ch04-A Quick Tour
     tour/IDemo.java         // 输出的结果
     tour/ExtractInterfaceTool.java          // 运行程序，用ExtractInterfaceListener来walk语法树
     tour/ExtractInterfaceListener.java      // （关键程序）
-获取文件的某一列(语义断言、或者叫语义谓词)
+获取(打印)文件的某一列(语义断言、或者叫语义谓词)
     tour/Col.java
     tour/Rows.g4
     tour/t.rows
@@ -131,11 +131,58 @@ error alternatives的演示
     errors/TestBail.java            // 测试自定义策略类
 
 ====================================================================================================
-Ch10-Attributes and Actions
+Ch10-Attributes and Actions 属性和与语义动作
 ====================================================================================================
+可以先从第四章的Rows.g4和Data.g4看看Attributes、Action和语义谓词的使用
 用属性和语义动作实现的计算器
     actions/tools/Calc.java
     actions/tools/Expr.g4
     // antlr4 -no-listener tools/Expr.g4
     // javac -d . tools/*.java #以当前目录为根目录,在java文件声明的包中生成*.class
     // java tools.Calc
+用属性和语义动作实现CSVLoader
+    actions/CSV.g4
+    $  antlr4  -no-listener  CSV.g4     #  again,  we  won't  use  a  listener
+    $  javac  CSV*.java
+    $  grun  CSV  file  users.csv       # 记住使用grun使用file选项指定输入文件
+识别关键字不是固定的语言(比如java5添加了enum的支持,编译器可以用-version来指定是否支持第五版的新特性)
+    actions/Keywords.g4
+
+====================================================================================================
+Ch11-Altering the Parse with Semantic Predicates用语义谓词变更解析
+====================================================================================================
+识别不同的方言,例子1,在语法分析器中使用语义谓词
+    predicates/Enum.g4
+    predicates/TestEnum.java
+识别不同的方言,例子2,在词法分析器中使用语义谓词(解决和上面例子一样的问题)
+    predicates/Enum2.g4
+    // 这个例子更适合在词法分析器中使用语义谓词,因为这样的话就可以简化语法分析器,比如不用定义额外的规则id
+    predicates/TestEnum2.java
+解决二义性的两个例子(这两个例子并不是完整的,只是提供了思路,可以在git上看完整的Cpp.g4)
+    predicates/CppExpr.g4
+    predicates/CppStat.g4
+
+====================================================================================================
+Ch12-Wielding Lexical Black Magic运用词法分析的黑魔法(解决一些很有意义的难题)
+====================================================================================================
+使用不同的channel,用TokenStreamRewriter来重写token流
+    lexmagic/ShiftVarComments.java
+    lexmagic/Cymbol.g4
+将关键字当做标识符来处理
+    lexmagic/IDKeyword.g4   // 相当巧妙的处理，只需要将特定的单词作为和词法规则ID组合成parser规则id即可
+Python中换行符的处理
+    lexmagic/SimplePy.g4
+识别XML文件,使用非贪婪模式,但是能只能实现比较简单的文本,功能比较弱鸡
+    lexmagic/Tags.g
+识别XML文件,使用词法模式,功能仍然比较弱鸡
+    lexmagic/ModTagsLexer.g4
+    lexmagic/ModTagsParser.g4
+有实用意义的XML解析器()
+    lexmagic/XMLLexer.g4
+    lexmagic/XMLParser.g4
+    #antlr4 XMLLexer.g4
+    #antlr4 XMLParser.g4
+    #javac XML*.g4
+    #grun XML document -tree XML-inputs/entity.xml
+
+

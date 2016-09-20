@@ -1,5 +1,5 @@
 // Generated from Keywords.g4 by ANTLR 4.5.3
-    // place this header action only in lexer, not the parser
+    // 将代码块添加到lexer中,而不是paser类哦!!
 import java.util.*;
 
 import org.antlr.v4.runtime.Lexer;
@@ -67,7 +67,9 @@ public class KeywordsLexer extends Lexer {
 		return VOCABULARY;
 	}
 
-	   // place this class member only in lexer
+
+	// 添加成员的方法和paser类似
+	// 注意这里只是创建一个Map表,然后把一些自定义的token类型放在表里面,line31才是设置Token类型的地方
 	Map<String,Integer> keywords = new HashMap<String,Integer>() {{
 	    put("begin", KeywordsParser.BEGIN);
 	    put("end",   KeywordsParser.END);
@@ -112,8 +114,9 @@ public class KeywordsLexer extends Lexer {
 		switch (actionIndex) {
 		case 0:
 
+			        // getText()是Lexer中的方法,所以可以出现在lexer规则的代码中
 			        if ( keywords.containsKey(getText()) ) {
-			            setType(keywords.get(getText())); // reset token type
+			            setType(keywords.get(getText())); // 重新设置token类型
 			        }
 			        
 			break;
